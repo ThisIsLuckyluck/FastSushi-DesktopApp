@@ -1,0 +1,96 @@
+nav {
+  height: 100%;
+  width: 250px; 
+  background: linear-gradient( #000000, #f14949); /* Dégradé noir à rouge */
+  padding-top: 20px;
+  color: orangered;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style du titre "FastSushi" dans la barre latérale */
+.FastSushi {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-right: 40px;
+}
+
+/* Style de l'image dans "FastSushi" */
+.image-sushi img {
+  width: 100px;
+  height:auto;
+}
+
+/* Style du titre h2 dans "FastSushi" */
+.FastSushi h2 {
+  margin: 0;
+}
+
+/* Style des éléments "Fast" et "Sushi" dans "FastSushi" */
+.FastSushi .Fast {
+  color: orangered;
+}
+
+.FastSushi .Sushi {
+  color: whitesmoke;
+}
+
+/* Style de la liste non ordonnée (ul) */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style des éléments li dans la liste */
+ul li {
+  padding: 10px;
+}
+
+/* Style des liens a dans les éléments li */
+ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  display: block;
+  border-radius: 10px; 
+  padding: 10px;
+  transition: background-color 0.3s; /* Transition de couleur de fond */
+}
+
+/* Changement de couleur au survol des liens */
+ul li a:hover {
+  background-color: white;
+  color: #111;
+}
+
+/* Style du bouton de déconnexion */
+#logout {
+  margin-top: 20px;
+  background-color: #d9534f; /* Fond rouge */
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* Changement de couleur au survol du bouton de déconnexion */
+#logout:hover {
+  background-color: #c9302c;
+}
+
+/* Style du lien du logo */
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Style du contenu principal */
+.content {
+  padding: 20px;
+  margin-left: 280px; /* Marge à gauche pour laisser de l'espace à la barre latérale */
+  font-size: 20px; /* Taille de police */
+  color: #f14949; /* Couleur rouge */
+  margin-bottom: 15px; /* Marge en bas */
+}
