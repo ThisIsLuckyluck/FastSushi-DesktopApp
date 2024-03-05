@@ -1,10 +1,10 @@
-import {url} from '../../config.js';
+import { config } from '../../config.js';
 
 
 export async function getLogin(username, password) {
     let response;
     try {
-        const response = await fetch(url ,+ '/login',{
+        const response = await fetch(config.url ,+ '/login',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

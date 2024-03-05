@@ -8,8 +8,6 @@ const checkIfLoggedIn = () => {
   const token = localStorage.getItem('token');
   if (!token) return false;
   return true;
-  //const decodedToken = JSON.parse(atob(token.split('.')[1]));
-  //return decodedToken.exp > Date.now() / 1000;
 };
 
 export {

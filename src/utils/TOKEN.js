@@ -1,13 +1,9 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { config } from '../../config.js';
+import fetch from 'node-fetch';
+import { writeFileSync } from 'fs';
 
-let config = readFileSync('../../config.js', 'utf8');
+const url = config.url + '/login';
 
-config = JSON.parse(config);
-
-const url = config.url_login;
-
-const username = config.username; 
-const password = config.password;
 fetch(url, {
   method: 'POST',
   headers: {
@@ -15,8 +11,8 @@ fetch(url, {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    "username": username,
-    "password": password
+    "username": config.username,
+    "password": config.password
   })
 })
 .then(response => response.json())
@@ -25,7 +21,7 @@ fetch(url, {
   
   const mergedData = {...config, ...data};
   
-  writeFileSync('../../config.js', JSON.stringify(mergedData, null, 2));
+  writeFileSync('../../config.js', `export const config = ${JSON.stringify(mergedData, null, 2)}`);
 })
 .catch((error) => {
   console.error('Error:', error);
