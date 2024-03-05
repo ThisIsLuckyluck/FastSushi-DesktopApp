@@ -1,1 +1,1 @@
-[Guide - Installation](./doc/guides.md)
+[Running the projet](./doc/Run.md)
