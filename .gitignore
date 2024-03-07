@@ -7,3 +7,5 @@ node_modules
 out
 #Ignore conf files
 config.js
+#Ignore text files
+Section.txt
