@@ -14,7 +14,7 @@
               const token = await getLogin(username, password);
   
               // Utilisation des données de la réponse : stockage du jeton (token) dans sessionStorage
-              localStorage.setItem('token', token);
+              sessionStorage.setItem('token', token);
               window.location.href = "../index.html";
           } catch (e) {
               // En cas d'erreur, une alerte est affichée avec le message d'erreur capturé

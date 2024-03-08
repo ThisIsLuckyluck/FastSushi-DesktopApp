@@ -2,15 +2,9 @@ import { checkIfLoggedIn } from '../utils/APIRequest.js';
 
 
 function logout() {
-  localStorage.removeItem('token');
+  sessionStorage.removeItem('token');
   window.close();
 }
-
-if (!checkIfLoggedIn()) {
-  window.location.href = './index.html';
-}
-
-// Handle navigation
 window.addEventListener('click', (e) => {
   if (e.target.matches('[data-link]')) {
     e.preventDefault();
