@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Dashboard | FastSushi</title>
+    <title>Liste des menus | FastSushi</title>
     <link rel="stylesheet" href="./../style/common.css" />
     <script type="module" src="./index.js"></script>
   </head>
@@ -28,10 +28,22 @@
     </nav>
     <main id="app">
       <div class="content">
-      
-        <h1>Bienvenue sur FastSushi Admin</h1>
+        <h1>Liste des Clients</h1>
+        <input type="search" id="searchInput" placeholder="rechercher un client">
+        <table id="client-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Téléphone</th>
+              <th>Email</th>
+              <th>Nom d'utilisateur</th>
+            </tr>
+          </thead>
+          <tbody id="client-list"></tbody>
+        </table>
       </div>
-    </div>
     </main>
   </body>
 </html>

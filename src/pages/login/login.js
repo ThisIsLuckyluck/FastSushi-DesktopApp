@@ -1,5 +1,5 @@
       // Importation de la fonction getLogin depuis le fichier API_POST.js situé dans le dossier parent de ce script
-      import { getLogin } from '../../utils/API_POST.js';
+      import { getLogin } from '../../utils/Post_login.js';
   
       // Ajout d'un écouteur d'événement sur la soumission du formulaire avec l'id 'loginForm'
       document.getElementById('loginForm').addEventListener('submit', async function (event) {

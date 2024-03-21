@@ -1,10 +1,9 @@
 import { config } from '../../config.js';
 
-
 export async function getLogin(username, password) {
     let response;
     try {
-        const response = await fetch(config.url ,+ '/login',{
+        const response = await fetch(config.url + '/login',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -19,6 +18,10 @@ export async function getLogin(username, password) {
 
         // Extrait les données de la réponse
         const responseData = await response.json();
+
+        // Stocker le token dans le localStorage
+        sessionStorage.setItem('token', responseData.token);
+
         return responseData.token;
     } catch (error) {
         return;
