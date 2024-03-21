@@ -17,3 +17,24 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
+#client-table {
+  width: 90%;
+  margin-left: 0; 
+  margin-right: 0;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Style des cellules (th et td) du tableau */
+#client-table th, #client-table td {
+  border: 1px solid #000000; /* Bordures noires */
+  padding: 8px;
+  text-align: left;
+  color: #000000; /* Texte noir */
+}
+
+/* Style des en-têtes de colonnes du tableau */
+#client-table th {
+  background-color: #f14949; /* Fond rouge pour les en-têtes */
+}
