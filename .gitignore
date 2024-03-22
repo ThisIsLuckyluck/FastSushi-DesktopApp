@@ -3,6 +3,9 @@
 # Ignore node_modules
 node_modules
 
+# Ignore VSCode files
+.vscode
+
 # Ignore output files
 out
 #Ignore conf files

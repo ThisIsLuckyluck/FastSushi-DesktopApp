@@ -1,6 +1,3 @@
-import { checkIfLoggedIn } from '../utils/APIRequest.js';
-
-
 function logout() {
   sessionStorage.removeItem('token');
   window.close();
