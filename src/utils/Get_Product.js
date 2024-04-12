@@ -34,7 +34,7 @@ function updateProductList(product) {
     product.forEach((product) => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td>${product.id_product}</td>
+            <td class="product-link"><td>${product.id_product}</td>
             <td>${product.type_product}</td>
             <td>${product.product_name}</td>
             <td>${product.description}</td>
