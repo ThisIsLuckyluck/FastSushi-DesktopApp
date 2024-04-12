@@ -1,39 +1,53 @@
-document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', function () {
+    // Sélectionner l'élément de recherche
     const searchInput = document.getElementById('searchInput');
-    const productList = document.getElementById('product-list');
-
-    searchInput.addEventListener('input', async function () {
-        const searchValue = searchInput.value.trim().toLowerCase();
-        try {
-            const response = await fetch(ip + '/product', {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/json',
-                    'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error('Erreur lors de la récupération des données des produits');
-            }
-
-            const data = await response.json();
-
-            const filteredProducts = data.filter(product => {
-                return product.product_name.toLowerCase().includes(searchValue);
-            });
-
-            updateProductList(filteredProducts);
-
-            // Afficher la liste des produits filtrés si des résultats sont trouvés
-            if (filteredProducts.length > 0) {
-                productList.style.display = 'table-row-group';
+   
+    // Ajouter un événement d'écoute pour détecter les changements de valeur
+    searchInput.addEventListener('input', function () {
+        // Récupérer la valeur de recherche
+        const searchTerm = searchInput.value.toLowerCase();
+   
+        // Sélectionner les lignes de la table
+        const rows = document.querySelectorAll('#client-table tbody tr');
+   
+        // Parcourir toutes les lignes
+        rows.forEach(row => {
+            // Récupérer le nom d'utilisateur dans le lien de la sixième colonne
+            const clientUsername = row.querySelector('td:nth-child(6)').textContent.toLowerCase();
+   
+            // Afficher ou masquer la ligne en fonction de si le nom du client correspond à la recherche
+            if (clientUsername.includes(searchTerm)) {
+                row.style.display = 'table-row'; // Afficher la ligne
             } else {
-                // Cacher la liste des produits si aucun résultat n'est trouvé
-                productList.style.display = 'none';
+                row.style.display = 'none'; // Masquer la ligne
             }
-        } catch (error) {
-            console.error('Error:', error);
-        }
+        });
     });
-});
+   });
+   
+   document.addEventListener('DOMContentLoaded', function () {
+       // Sélectionner l'élément de recherche
+       const searchInput = document.getElementById('searchInput');
+      
+       // Ajouter un événement d'écoute pour détecter les changements de valeur
+       searchInput.addEventListener('input', function () {
+           // Récupérer la valeur de recherche
+           const searchTerm = searchInput.value.toLowerCase();
+      
+           // Sélectionner les lignes de la table
+           const rows = document.querySelectorAll('#product-table tbody tr');
+      
+           // Parcourir toutes les lignes
+           rows.forEach(row => {
+               // Récupérer le nom d'utilisateur dans le lien de la sixième colonne
+               const clientUsername = row.querySelector('td:nth-child(6)').textContent.toLowerCase();
+      
+               // Afficher ou masquer la ligne en fonction de si le nom du client correspond à la recherche
+               if (clientUsername.includes(searchTerm)) {
+                   row.style.display = 'table-row'; // Afficher la ligne
+               } else {
+                   row.style.display = 'none'; // Masquer la ligne
+               }
+           });
+       });
+      });
