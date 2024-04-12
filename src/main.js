@@ -17,7 +17,7 @@ const createWindow = () => {
     },
   });
 
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   // et chargement de l'index.html de l'application.
   mainWindow.loadFile('./src/pages/login/login.html');
