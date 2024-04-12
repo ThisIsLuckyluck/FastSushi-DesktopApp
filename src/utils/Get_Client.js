@@ -39,7 +39,7 @@ function updateClientList(clients) {
             <td>${client.first_name}</td>
             <td>${client.tel}</td>
             <td>${client.email}</td>
-            <td>${client.username}</td>
+            <td><a href="./userfile.html?id=${client.id_user}" class="client-link">${client.username}</a></td>
         `;
         clientList.appendChild(tr);
 

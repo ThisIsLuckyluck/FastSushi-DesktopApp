@@ -86,11 +86,3 @@ ul li a:hover {
   cursor: pointer;
 }
 
-/* Style du contenu principal */
-.content {
-  padding: 20px;
-  margin-left: 280px; /* Marge à gauche pour laisser de l'espace à la barre latérale */
-  font-size: 20px; /* Taille de police */
-  color: #f14949; /* Couleur rouge */
-  margin-bottom: 15px; /* Marge en bas */
-}
