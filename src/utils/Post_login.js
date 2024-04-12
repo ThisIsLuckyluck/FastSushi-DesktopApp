@@ -1,9 +1,9 @@
-import { config } from '../../config.js';
+import { ip } from '../../config.js';
 
 export async function getLogin(username, password) {
     let response;
     try {
-        const response = await fetch(config.url + '/login',{
+        const response = await fetch(ip + '/login',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
