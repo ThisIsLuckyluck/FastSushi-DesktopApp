@@ -5,8 +5,8 @@
     <title>Utilisateur | FastSushi</title>
     <link rel="stylesheet" href="./../style/global.css"/>
     <script type="module" src="./index.js"></script>
-    <script type="module" src="../utils/UpdateUser.js"></script>
-  
+    <script type="module" src="../utils/Get_Client.js"></script>
+    <script type="module" src="../utils/input.js"></script>
     
   </head>
   <body>
@@ -32,7 +32,7 @@
     <main id="app">
       <div class="content">
         <!-- Fiche client -->
-    <div class="content" id="client-details">
+  <div class="content" id="client-details">
     <h1>Détails du Client</h1>
     <!-- Contenu des détails du client -->
     <div id="client-details-content">
@@ -46,16 +46,13 @@
 
       <!-- Boutons d'action -->
       <button id="delete">Supprimer</button>
-      <form id="updateUserForm">
-        <!-- Vos champs de formulaire -->
-        <button type="submit">Update</button>
-    </form>
+      <button id="update">Update</button>
     </div>
   </div>
 
-  <!---------------------afficher les données d'un client------------------------->
-  <script type="module">
-    import {ip} from "../../config.js";
+  <!-- Script JavaScript -->
+  <script>
+    
     // Lorsque le contenu de la page est chargé
     document.addEventListener('DOMContentLoaded', async function () {
         const urlParams = new URLSearchParams(window.location.search);
@@ -69,7 +66,7 @@
             }
 
             // Effectuer une requête pour récupérer les données du client
-            const response = await fetch(ip +'/user/id', {
+            const response = await fetch('http://185.255.112.208:3000/user/id', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -88,8 +85,6 @@
 
             // Afficher les détails du client
             displayClientDetails(clientData[0]);
-            
-            //Analyse de la réponse JSON
             console.log(clientData)
 
         } catch (error) {
@@ -116,45 +111,6 @@
         document.getElementById('client-username').textContent = clientData.username;console.log(clientData.username);
     }
   </script>
-<!-----------------------------------------UPDATE USER--------------------------------------->
-<script type="module">
-  import {ip} from "../../config.js";
-  import {updateUser} from "../utils/UpdateUser.js";
-
-  // Récupérer les paramètres de l'URL
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-
-  const id = urlParams.get('id');
-
-  let clientId; // Déclarez clientId en dehors de la fonction DOMContentLoaded
-
-document.addEventListener('DOMContentLoaded', async function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    clientId = urlParams.get('id'); // Affectez la valeur à clientId ici
-
-    try {
-        // Votre code pour récupérer les données du client
-    } catch (error) {
-        console.error('Error:', error);
-    }
-});
-
-document.getElementById('updateUserForm').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Empêche le rechargement de la page
-
-    const last_name = document.getElementById('client-last-name').textContent;
-    const first_name = document.getElementById('client-first-name').textContent;
-    const username = document.getElementById('client-username').textContent;
-    const email = document.getElementById('client-email').textContent;
-    const tel = document.getElementById('client-tel').textContent;
-
-    const response = await updateUser(clientId, last_name, first_name, username, email, tel);
-
-    alert("Changement effectué");
-});
-
-</script>
       </div>
     </main>
   </body>

@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.error('Error:', error);
     }
 });
-
 function updateDessertList(dessert) {
     const dessertList = document.getElementById('dessert-list');
     if (!dessertList) {
