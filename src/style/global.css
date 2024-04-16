@@ -172,6 +172,7 @@ body {
 .button-25:active {
   opacity: .5;
 }
+
 /* bouton supprimer */
 #add_appetizer:hover, #add_plate:hover, #add_dessert:hover {
   background-color: #f14949;
