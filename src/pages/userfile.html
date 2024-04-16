@@ -45,7 +45,7 @@
       <p><strong>Nom d'utilisateur:</strong> <span id="client-username" contenteditable="true"></span></p>
 
       <!-- Boutons d'action -->
-      <button id="delete">Supprimer</button>
+      <button type="button" class="btn btn-danger">Supprimer l'utilisateur</button>
       <form id="updateUserForm">
         <!-- Vos champs de formulaire -->
         <button type="submit">Update</button>
@@ -58,6 +58,7 @@
     import {ip} from "../../config.js";
     // Lorsque le contenu de la page est chargé
     document.addEventListener('DOMContentLoaded', async function () {
+
         const urlParams = new URLSearchParams(window.location.search);
         const clientId = urlParams.get('id');
 
@@ -153,7 +154,30 @@ document.getElementById('updateUserForm').addEventListener('submit', async funct
 
     alert("Changement effectué");
 });
+</script>
 
+<!------------------------SUPPRIMER UN USER------------------------>
+<script type="module">
+//sélection du bouton supprimé utilisateur
+import {ip} from "../../config.js";
+import {deleteUser} from "../utils/DeleteUser.js";
+
+// Récupérer les paramètres de l'URL
+const queryString1 = window.location.search;
+const urlParams1 = new URLSearchParams(queryString1);
+
+// Récupérer la valeur de l'ID
+const id1 = urlParams1.get('id');
+
+const deleteButton = document.querySelector('.btn-danger');
+
+// Ajout d'un gestionnaire d'événements au clic sur le bouton
+deleteButton.addEventListener('click', function() {
+  // Code à exécuter lorsque le bouton est cliqué
+  if (confirm("Voulez-vous vraiment supprimer cet utilisateur ?")) {
+    const response = deleteUser(id1);
+  }
+});
 </script>
       </div>
     </main>
