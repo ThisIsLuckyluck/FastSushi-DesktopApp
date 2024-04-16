@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Sélectionner l'élément de recherche
+document.addEventListener('DOMContentLoaded', async function () {
     const searchInput = document.getElementById('searchInput');
    
     // Ajouter un événement d'écoute pour détecter les changements de valeur
@@ -35,12 +34,12 @@ document.addEventListener('DOMContentLoaded', function () {
            const searchTerm = searchInput.value.toLowerCase();
       
            // Sélectionner les lignes de la table
-           const rows = document.querySelectorAll('#product-table tbody tr');
+           const rows = document.querySelectorAll('#plate-table tbody tr');
       
            // Parcourir toutes les lignes
            rows.forEach(row => {
                // Récupérer le nom d'utilisateur dans le lien de la sixième colonne
-               const clientUsername = row.querySelector('td:nth-child(6)').textContent.toLowerCase();
+               const clientUsername = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
       
                // Afficher ou masquer la ligne en fonction de si le nom du client correspond à la recherche
                if (clientUsername.includes(searchTerm)) {
