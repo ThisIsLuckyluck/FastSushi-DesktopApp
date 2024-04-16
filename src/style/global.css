@@ -126,15 +126,15 @@ body {
 
 .button-24:hover,
 .button-24:active {
-  background-color: initial;
+  background-color: #0051ff;
   background-position: 0 0;
-  color: #427eff;
+  color: #ffffff;
 }
 
 .button-24:active {
   opacity: .5;
 }
-/* bouton mise à jour */
+/* bouton mise à jour fin */
 
 /* bouton supprimer*/
 .button-25 {
@@ -164,15 +164,16 @@ body {
 
 .button-25:hover,
 .button-25:active {
-  background-color: initial;
+  background-color: #f80800;
   background-position: 0 0;
-  color: #FF4742;
+  color: #ffffff;
 }
 
 .button-25:active {
   opacity: .5;
 }
 /* bouton supprimer */
+
 #add_appetizer:hover, #add_plate:hover, #add_dessert:hover {
   background-color: #f14949;
   color: #000000;

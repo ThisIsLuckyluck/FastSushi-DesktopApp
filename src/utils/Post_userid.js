@@ -37,19 +37,21 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 // Fonction pour afficher les détails du client
 function displayClientDetails(clientData) {
-    // Récupérer l'élément parent pour les détails du client
-    const clientDetailsDiv = document.getElementById('client-details-content');
-    if (!clientDetailsDiv) {
-        console.error("L'élément avec l'ID 'client-details-content' n'a pas été trouvé.");
-        return;
-    }
+    // Récupérer les éléments des champs de formulaire
+    const clientIdInput = document.getElementById('client-id');
+    const clientLastNameInput = document.getElementById('client-last-name');
+    const clientFirstNameInput = document.getElementById('client-first-name');
+    const clientEmailInput = document.getElementById('client-email');
+    const clientTelInput = document.getElementById('client-tel');
+    const clientPermissionInput = document.getElementById('client-permission');
+    const clientUsernameInput = document.getElementById('client-username');
 
-    // Mettre à jour les éléments HTML avec les données du client
-    document.getElementById('client-id').textContent = clientData.id_user;console.log(clientData.id_user)
-    document.getElementById('client-last-name').textContent = clientData.last_name;console.log(clientData.last_name);
-    document.getElementById('client-first-name').textContent = clientData.first_name;console.log(clientData.first_name);
-    document.getElementById('client-email').textContent = clientData.email;console.log(clientData.email);
-    document.getElementById('client-tel').textContent = clientData.tel;console.log(clientData.tel);
-    document.getElementById('client-permission').textContent = clientData.permission;console.log(clientData.permission);
-    document.getElementById('client-username').textContent = clientData.username;console.log(clientData.username);
+    // Mettre à jour les valeurs des champs de formulaire avec les données du client
+    clientIdInput.value = clientData.id_user;
+    clientLastNameInput.value = clientData.last_name;
+    clientFirstNameInput.value = clientData.first_name;
+    clientEmailInput.value = clientData.email;
+    clientTelInput.value = clientData.tel;
+    clientPermissionInput.value = clientData.permission;
+    clientUsernameInput.value = clientData.username;
 }

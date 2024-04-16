@@ -1,4 +1,4 @@
-import {ip} from '../../config.js';
+import { ip } from '../../config.js';
 
 export async function updateUser(user_id, last_name, first_name, username, email, tel) {
     try {
@@ -8,7 +8,7 @@ export async function updateUser(user_id, last_name, first_name, username, email
                 'Content-Type': 'application/json',
                 'Authorization': "Bearer " + sessionStorage.getItem('token')
             },
-            body: JSON.stringify({user_id, last_name, first_name, username, email, tel})
+            body: JSON.stringify({ user_id, last_name, first_name, username, email, tel })
         });
 
         const statusCode = response.status; // Récupérer le code HTTP
@@ -29,35 +29,29 @@ export async function updateUser(user_id, last_name, first_name, username, email
         throw error; // Propager l'erreur pour la gérer à un niveau supérieur si nécessaire
     }
 }
-// Récupérer les paramètres de l'URL
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-
-const id = urlParams.get('id');
-
-let clientId; // Déclarez clientId en dehors de la fonction DOMContentLoaded
 
 document.addEventListener('DOMContentLoaded', async function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  clientId = urlParams.get('id'); // Affectez la valeur à clientId ici
+    const urlParams = new URLSearchParams(window.location.search);
+    const clientId = urlParams.get('id');
 
-  try {
-      // Votre code pour récupérer les données du client
-  } catch (error) {
-      console.error('Error:', error);
-  }
-});
+    try {
+        // Votre code pour récupérer les données du client
 
-document.getElementById('updateUserForm').addEventListener('submit', async function (event) {
-  event.preventDefault(); // Empêche le rechargement de la page
+        // Ajouter l'écouteur d'événements au formulaire
+        document.getElementById('updateUserForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Empêche le rechargement de la page
 
-  const last_name = document.getElementById('client-last-name').textContent;
-  const first_name = document.getElementById('client-first-name').textContent;
-  const username = document.getElementById('client-username').textContent;
-  const email = document.getElementById('client-email').textContent;
-  const tel = document.getElementById('client-tel').textContent;
+            const last_name = document.getElementById('client-last-name').textContent;
+            const first_name = document.getElementById('client-first-name').textContent;
+            const username = document.getElementById('client-username').textContent;
+            const email = document.getElementById('client-email').textContent;
+            const tel = document.getElementById('client-tel').textContent;
 
-  const response = await updateUser(clientId, last_name, first_name, username, email, tel);
+            const response = await updateUser(clientId, last_name, first_name, username, email, tel);
 
-  alert("Changement effectué");
+            alert("Changement effectué");
+        });
+    } catch (error) {
+        console.error('Error:', error);
+    }
 });
