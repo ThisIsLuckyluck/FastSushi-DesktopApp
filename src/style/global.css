@@ -179,3 +179,7 @@ body {
   background-color: #f14949;
   color: #000000;
 }
+
+#searchInput {
+  border-radius: 1px;
+}
