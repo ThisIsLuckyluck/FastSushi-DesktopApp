@@ -1,5 +1,3 @@
-import { updateProductList } from '../utils/Get_Product.js';
-
 document.addEventListener('DOMContentLoaded', async function () {
     const searchInput = document.getElementById('searchInput');
    
