@@ -14,16 +14,18 @@ export async function updateUser(user_id, last_name, first_name, username, email
         const statusCode = response.status; // Récupérer le code HTTP
 
         if (statusCode == 200) {
-            return "User supprimé";
+            return "User mis à jour";
         } else {
             if (statusCode == 401) {
                 return "User inexistant";
             } else {
-                return "Error";
+                // Récupérer le corps de la réponse pour obtenir plus d'informations sur l'erreur
+                const responseBody = await response.json();
+                return `Erreur lors de la mise à jour de l'utilisateur : ${responseBody.message}`;
             }
         }
     } catch (error) {
-        console.error('Erreur lors de la suppression de l\'utilisateur:', error);
+        console.error('Erreur lors de la mise à jour de l\'utilisateur:', error);
         throw error; // Propager l'erreur pour la gérer à un niveau supérieur si nécessaire
     }
 }
