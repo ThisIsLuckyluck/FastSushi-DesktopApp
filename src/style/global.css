@@ -39,7 +39,7 @@ body {
   background-color: #f14949; /* Fond rouge pour les en-têtes */
 }
 
-#plate-table {
+#plate-table, #dessert-table, #appetizer-table{
   width: 90%;
   margin-left: 0; 
   margin-right: 0;
@@ -48,7 +48,7 @@ body {
 }
 
 /* Style des cellules (th et td) du tableau */
-#plate-table th, #plate-table td {
+#plate-table th, #plate-table td, #dessert-table th, #dessert-table td, #appetizer-table th, #appetizer-table td{
   border: 1px solid #000000; /* Bordures noires */
   padding: 8px;
   text-align: left;
@@ -56,36 +56,26 @@ body {
 }
 
 /* Style des en-têtes de colonnes du tableau */
-#plate-table th {
+#plate-table th, #dessert-table th, #appetizer-table th{
   background-color: #f14949; /* Fond rouge pour les en-têtes */
 }
 
-#dessert-table {
-  width: 90%;
-  margin-left: 0; 
-  margin-right: 0;
-  border-collapse: collapse;
+.appetizer, .plate, .dessert {
   margin-top: 20px;
+  background-color: #d9534f; 
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
-/* Style des cellules (th et td) du tableau */
-#dessert-table th, #dessert-table td {
-  border: 1px solid #000000; /* Bordures noires */
-  padding: 8px;
-  text-align: left;
-  color: #000000; /* Texte noir */
+.appetizer:hover, .plate:hover, .dessert:hover {
+  background-color: #c9302c;
+  color : black;
 }
 
-/* Style des en-têtes de colonnes du tableau */
-#dessert-table th {
-  background-color: #f14949; /* Fond rouge pour les en-têtes */
-}
-
-#appetizer-table {
-  width: 90%;
-  margin-left: 0; 
-  margin-right: 0;
-  border-collapse: collapse;
+#add_appetizer, #add_plate, #add_dessert{
   margin-top: 20px;
 }
 
@@ -100,86 +90,4 @@ body {
 /* Style des en-têtes de colonnes du tableau */
 #appetizer-table th {
   background-color: #f14949; /* Fond rouge pour les en-têtes */
-}
-
-
-
-/* bouton mise à jour */
-.button-24 {
-  background: #427eff;
-  border: 1px solid #427eff;
-  border-radius: 0px;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "nunito","roboto","proxima-nova","proxima nova",sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 6px;
-  min-height: 20px;
-  outline: 0;
-  padding: 12px 14px;
-  text-align: center;
-  text-rendering: geometricprecision;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-}
-
-.button-24:hover,
-.button-24:active {
-  background-color: initial;
-  background-position: 0 0;
-  color: #427eff;
-}
-
-.button-24:active {
-  opacity: .5;
-}
-/* bouton mise à jour */
-
-/* bouton supprimer*/
-.button-25 {
-  background: #FF4742;
-  border: 1px solid #FF4742;
-  border-radius: 0px;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "nunito","roboto","proxima-nova","proxima nova",sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 6px;
-  min-height: 20px;
-  outline: 0;
-  padding: 12px 14px;
-  text-align: center;
-  text-rendering: geometricprecision;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-}
-
-.button-25:hover,
-.button-25:active {
-  background-color: initial;
-  background-position: 0 0;
-  color: #FF4742;
-}
-
-.button-25:active {
-  opacity: .5;
-}
-/* bouton supprimer */
-
-content{
-
 }
