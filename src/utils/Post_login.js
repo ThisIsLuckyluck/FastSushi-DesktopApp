@@ -16,6 +16,10 @@ export async function getLogin(username, password) {
             throw new Error('La requête a échoué');
         }
 
+        if (response.status === 401) {
+            throw new Error('Nom d\'utilisateur ou mot de passe incorrect');
+        }
+
         // Extrait les données de la réponse
         const responseData = await response.json();
 
