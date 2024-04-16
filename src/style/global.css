@@ -80,3 +80,7 @@ body {
 #dessert-table th {
   background-color: #f14949; /* Fond rouge pour les en-têtes */
 }
+
+#product-list {
+  display: none;
+}

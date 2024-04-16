@@ -1,5 +1,6 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Sélectionner l'élément de recherche
+import { updateProductList } from '../utils/Get_Product.js';
+
+document.addEventListener('DOMContentLoaded', async function () {
     const searchInput = document.getElementById('searchInput');
    
     // Ajouter un événement d'écoute pour détecter les changements de valeur
