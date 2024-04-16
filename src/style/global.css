@@ -39,7 +39,7 @@ body {
   background-color: #f14949; /* Fond rouge pour les en-têtes */
 }
 
-#plate-table {
+#plate-table, #dessert-table, #appetizer-table{
   width: 90%;
   margin-left: 0; 
   margin-right: 0;
@@ -48,7 +48,7 @@ body {
 }
 
 /* Style des cellules (th et td) du tableau */
-#plate-table th, #plate-table td {
+#plate-table th, #plate-table td, #dessert-table th, #dessert-table td, #appetizer-table th, #appetizer-table td{
   border: 1px solid #000000; /* Bordures noires */
   padding: 8px;
   text-align: left;
@@ -56,48 +56,36 @@ body {
 }
 
 /* Style des en-têtes de colonnes du tableau */
-#plate-table th {
+#plate-table th, #dessert-table th, #appetizer-table th{
   background-color: #f14949; /* Fond rouge pour les en-têtes */
 }
 
-#dessert-table {
-  width: 90%;
-  margin-left: 0; 
-  margin-right: 0;
-  border-collapse: collapse;
+.appetizer, .plate, .dessert {
   margin-top: 20px;
+  background-color: #d9534f; 
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
-/* Style des cellules (th et td) du tableau */
-#dessert-table th, #dessert-table td {
-  border: 1px solid #000000; /* Bordures noires */
-  padding: 8px;
-  text-align: left;
-  color: #000000; /* Texte noir */
+.appetizer:hover, .plate:hover, .dessert:hover {
+  background-color: #c9302c;
+  color : black;
 }
 
-/* Style des en-têtes de colonnes du tableau */
-#dessert-table th {
-  background-color: #f14949; /* Fond rouge pour les en-têtes */
-}
-
-#appetizer-table {
-  width: 90%;
-  margin-left: 0; 
-  margin-right: 0;
-  border-collapse: collapse;
+#add_appetizer, #add_plate, #add_dessert{
   margin-top: 20px;
+  background-color: #d9534f;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
-/* Style des cellules (th et td) du tableau */
-#appetizer-table th, #appetizer-table td {
-  border: 1px solid #000000; /* Bordures noires */
-  padding: 8px;
-  text-align: left;
-  color: #000000; /* Texte noir */
-}
-
-/* Style des en-têtes de colonnes du tableau */
-#appetizer-table th {
-  background-color: #f14949; /* Fond rouge pour les en-têtes */
+#add_appetizer:hover, #add_plate:hover, #add_dessert:hover {
+  background-color: #f14949;
+  color: #000000;
 }
