@@ -85,7 +85,6 @@ body {
   border-radius: 10px;
 }
 
-<<<<<<< HEAD
 /* Style des cellules (th et td) du tableau */
 #appetizer-table th, #appetizer-table td {
   border: 1px solid #000000; /* Bordures noires */
@@ -98,8 +97,6 @@ body {
 #appetizer-table th {
   background-color: #f14949; /* Fond rouge pour les en-têtes */
 }
-
-
 
 /* bouton mise à jour */
 .button-24 {
@@ -176,10 +173,7 @@ body {
   opacity: .5;
 }
 /* bouton supprimer */
-
-=======
 #add_appetizer:hover, #add_plate:hover, #add_dessert:hover {
   background-color: #f14949;
   color: #000000;
 }
->>>>>>> 2d3df7a057bb3b7a6e66374892f614cdfefe2c6d
