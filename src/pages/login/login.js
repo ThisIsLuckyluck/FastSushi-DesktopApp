@@ -12,7 +12,11 @@
   
               // Attente de la réponse de la fonction asynchrone getLogin
               const token = await getLogin(username, password);
-  
+            
+              if (!token) {
+                  alert('Nom d\'utilisateur ou mot de passe incorrect');
+                  return;
+              }
               // Utilisation des données de la réponse : stockage du jeton (token) dans sessionStorage
               sessionStorage.setItem('token', token);
               window.location.href = "../index.html";

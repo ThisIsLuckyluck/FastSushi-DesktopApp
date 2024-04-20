@@ -30,7 +30,7 @@ function updateDessertList(dessert) {
     }
     dessertList.innerHTML = '';
 
-    dessert.forEach((desserts) => {
+    dessert.forEach((dessert) => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td class="dessert-link">${dessert.id_product}</td>
