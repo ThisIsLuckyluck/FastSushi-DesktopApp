@@ -181,5 +181,8 @@ body {
 }
 
 #searchInput {
-  border-radius: 1px;
+  border: 1px solid #000000; /* Bordures noires */
+  padding: 4px;
+  border-radius: 2px;
+  border-color: #000000;
 }
