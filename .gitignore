@@ -1,12 +1,26 @@
-# gitignore file 
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Ignore node_modules
 node_modules
-# Ignore VSCode files
-.vscode
-# Ignore output files
-out
-#Ignore conf files
-config.js
-#Ignore text files
-Section.txt
+dist
+dist-ssr
+dist-electron
+release
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
