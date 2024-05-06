@@ -1,7 +1,7 @@
 import { ip } from '../../config.ts';
 
 export async function getLogin(username, password) {
-    let response;
+    // let response;
     try {
         const response = await fetch(ip + '/login',{
             method: 'POST',

@@ -1,3 +1,1 @@
-const ip ="http://localhost:3000"
-
-export default ip;
+export const ip = 'http://localhost:3000';

@@ -19,7 +19,7 @@
               }
               // Utilisation des données de la réponse : stockage du jeton (token) dans sessionStorage
               sessionStorage.setItem('token', token);
-              window.location.href = "../index.html";
+              window.location.href = "../../../index.html";
           } catch (e) {
               // En cas d'erreur, une alerte est affichée avec le message d'erreur capturé
               alert('Error: ' + e.message);
