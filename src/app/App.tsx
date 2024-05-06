@@ -2,14 +2,13 @@ import { useState } from 'react'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/electron-vite.animate.svg'
 import './App.css'
-import NavBar from './component/NavBar'
+// import NavBar from './component/NavBar'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <NavBar/>
       <div>
         <a href="https://electron-vite.github.io" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

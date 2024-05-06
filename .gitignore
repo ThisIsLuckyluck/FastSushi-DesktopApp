@@ -27,3 +27,6 @@ release
 
 # Text files
 *.txt
+
+#configuration files
+config.js
