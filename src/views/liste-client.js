@@ -1,6 +1,4 @@
-export default function ListeClient() {
-  return `
-  <link rel="stylesheet" href="./common.css" />
+export default () => `
     <div class="content">
       <h1>Liste des Clients</h1>
       <input type="search" id="searchInput" placeholder="rechercher un client" />
@@ -18,5 +16,4 @@ export default function ListeClient() {
         <tbody id="client-list"></tbody>
       </table>
     </div>
-  `;
-}
+`;
