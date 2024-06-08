@@ -30,26 +30,25 @@ export async function updateUser(user_id, last_name, first_name, username, email
     }
 }
 
-document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
     const clientId = urlParams.get('id');
 
     try {
-        // Votre code pour récupérer les données du client
-
         // Ajouter l'écouteur d'événements au formulaire
-        document.getElementById('updateUserForm').addEventListener('submit', async function (event) {
+        const updateUserForm = document.getElementById('updateUserForm');
+        updateUserForm.addEventListener('submit', async function (event) {
             event.preventDefault(); // Empêche le rechargement de la page
 
-            const last_name = document.getElementById('client-last-name').textContent;
-            const first_name = document.getElementById('client-first-name').textContent;
-            const username = document.getElementById('client-username').textContent;
-            const email = document.getElementById('client-email').textContent;
-            const tel = document.getElementById('client-tel').textContent;
+            const last_name = document.getElementById('client-last-name').value;
+            const first_name = document.getElementById('client-first-name').value;
+            const username = document.getElementById('client-username').value;
+            const email = document.getElementById('client-email').value;
+            const tel = document.getElementById('client-tel').value;
 
             const response = await updateUser(clientId, last_name, first_name, username, email, tel);
 
-            alert("Changement effectué");
+            alert(response); // Affichez le message retourné par la fonction updateUser
         });
     } catch (error) {
         console.error('Error:', error);

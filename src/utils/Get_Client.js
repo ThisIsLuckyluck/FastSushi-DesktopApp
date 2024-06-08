@@ -1,4 +1,4 @@
-import {ip} from '../../config.js';
+import { ip } from '../../config.js';
 
 document.addEventListener('DOMContentLoaded', async function () {
     try {
@@ -15,8 +15,16 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
 
         const data = await response.json();
-
         updateClientList(data);
+
+        // Add search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function () {
+            const filteredClients = data.filter(client =>
+                client.username.toLowerCase().includes(searchInput.value.toLowerCase())
+            );
+            updateClientList(filteredClients);
+        });
 
     } catch (error) {
         console.error('Error:', error);
@@ -34,7 +42,7 @@ function updateClientList(clients) {
     clients.forEach((client) => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-        <td class="client-link">${client.id_user}</td>
+            <td class="client-link">${client.id_user}</td>
             <td>${client.last_name}</td>
             <td>${client.first_name}</td>
             <td>${client.tel}</td>
