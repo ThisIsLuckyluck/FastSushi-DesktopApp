@@ -27,19 +27,29 @@ export async function deleteUser(id_user) {
         throw error; // Propager l'erreur pour la gérer à un niveau supérieur si nécessaire
     }
 }
-// Récupérer les paramètres de l'URL
-const queryString1 = window.location.search;
-const urlParams1 = new URLSearchParams(queryString1);
 
-// Récupérer la valeur de l'ID
-const id1 = urlParams1.get('id');
+document.addEventListener('DOMContentLoaded', async function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const clientId = urlParams.get('id');
 
-const deleteButton = document.querySelector('.btn-danger');
+    try {
+        // Votre code pour récupérer les données du client
 
-// Ajout d'un gestionnaire d'événements au clic sur le bouton
-deleteButton.addEventListener('click', function() {
-  // Code à exécuter lorsque le bouton est cliqué
-  if (confirm("Voulez-vous vraiment supprimer cet utilisateur ?")) {
-    const response = deleteUser(id1);
-  }
+        // Ajouter l'écouteur d'événements au formulaire
+        document.getElementById('updateUserForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+
+            const last_name = document.getElementById('client-last-name').textContent;
+            const first_name = document.getElementById('client-first-name').textContent;
+            const username = document.getElementById('client-username').textContent;
+            const email = document.getElementById('client-email').textContent;
+            const tel = document.getElementById('client-tel').textContent;
+
+            const response = await updateUser(clientId, last_name, first_name, username, email, tel);
+
+            alert("Changement effectué");
+        });
+    } catch (error) {
+        console.error('Error:', error);
+    }
 });
