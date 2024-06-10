@@ -1,31 +1,84 @@
 <!doctype html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8" />
     <title>Paramètres | FastSushi</title>
     <link rel="stylesheet" href="./../style/global.css"/>
-    <script type="module" src="./index.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <nav>
-      <div class="FastSushi">
-        <a href="./index.html" class="logo-link">
-          <div class="image-sushi">
-            <img src="./../../assets/logo_blanc.png"/>
-          </div>
-          <h2>
-            <span class="Fast">Fast</span><span class="Sushi">Sushi</span>
-          </h2>
-        </a>
-      </div>
-      <ul>
-        <li><a href="./user.html">Liste Client</a></li>
-        <li><a href="./menus.html">Gestion des produits</a></li>
-        <li><a href="./settings.html">Paramètres</a></li>
-      </ul>
-
-      <button id="logout" >Quitter l'application</button>
+        <div class="FastSushi">
+            <a href="./index.html" class="logo-link">
+                <div class="image-sushi">
+                    <img src="./../../assets/logo_blanc.png"/>
+                </div>
+                <h2>
+                    <span class="Fast">Fast</span><span class="Sushi">Sushi</span>
+                </h2>
+            </a>
+        </div>
+        <ul>
+            <li><a href="./user.html">Liste Client</a></li>
+            <li><a href="./menus.html">Gestion des produits</a></li>
+            <li><a href="./settings.html">Paramètres</a></li>
+        </ul>
+        <button id="logout">Quitter l'application</button>
     </nav>
-    <main id="app"></main>
-  </body>
+    <style>
+        
+    </style>
+    <main>
+        <div class="settings-card">
+            <div class="settings-container">
+                <h1>Paramètres de l'Application</h1>
+                <div class="settings-item">
+                    <label for="app-version">Version de l'application:</label>
+                    <span id="app-version">1.0.0</span>
+                </div>
+                <div class="settings-item">
+                    <label for="last-update">Dernière mise à jour:</label>
+                    <span id="last-update">10 Juin 2024</span>
+                </div>
+                <div class="settings-item">
+                    <label for="current-time">Heure actuelle:</label>
+                    <span id="current-time"></span>
+                </div>
+                <div class="settings-item">
+                    <label for="user-info">Utilisateur connecté:</label>
+                    <span id="user-info"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="./settings.js"></script>
+</body>
+<script>
+  // Fonction pour récupérer les informations de l'utilisateur connecté
+function getUserInfo() {
+    const username = sessionStorage.getItem('username');
+    return username ? username : 'Non connecté';
+}
+
+// Fonction pour initialiser les paramètres de l'application
+function initSettings() {
+    document.getElementById('app-version').textContent = '1.0.0'; // Version de l'application
+    document.getElementById('last-update').textContent = '10 Juin 2024'; // Date de la dernière mise à jour
+    document.getElementById('user-info').textContent = getUserInfo(); // Utilisateur connecté
+    updateCurrentTime(); // Mettre à jour l'heure actuelle
+}
+
+// Fonction pour mettre à jour l'heure actuelle
+function updateCurrentTime() {
+    const now = new Date();
+    const currentTime = now.toLocaleTimeString();
+    document.getElementById('current-time').textContent = currentTime;
+}
+
+// Mettre à jour l'heure actuelle toutes les secondes
+setInterval(updateCurrentTime, 1000);
+
+// Initialiser les paramètres lorsque la page est chargée
+window.onload = initSettings;
+
+</script>
 </html>
