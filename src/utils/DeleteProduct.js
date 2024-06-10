@@ -1,4 +1,4 @@
-import {ip} from '../conf.js';
+import {ip} from '../../config.js';
 
 export async function deleteProduct(id_product) {
     try {

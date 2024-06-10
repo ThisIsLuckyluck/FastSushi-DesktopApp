@@ -39,7 +39,7 @@ function updateDessertList(appetizer) {
         <td>${appetizer.description}</td>
         <td>${appetizer.price}</td>
         <td>${appetizer.quantity}</td>
-        <td><span class="material-symbols-outlined">delete</span></td> <!-- Utilisation de l'icône -->
+        <td><a href="./appetizerDelete.html?id=${appetizer.id_product}" class="client-link">Supprimer</a></td>
     `;
         appetizerList.appendChild(tr);
 
