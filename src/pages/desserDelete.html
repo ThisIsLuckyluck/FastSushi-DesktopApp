@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supprimer un produit</title>
+  <link href="../css/output.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+  <h2 id="titre">Gestion du produit n°</h2>
+  <div id="product-details">
+    <p id="product-name"></p>
+    <p id="product-description"></p>
+    <p id="product-price"></p>
+    <p id="product-quantity"></p>
+  </div>
+  <button id="deleteButton" class="btn btn-danger">Supprimer le produit</button>
+  <button class="btn btn-secondary"><a href="./index.html" class="text-dark">Annuler</a></button>
+</div>
+
+<script type="module">
+  import {getProductByID} from "../../script/getProductByID.js";
+  import {deleteProduct} from "../../script/deleteProduct.js";
+
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const id = urlParams.get('id');
+
+  document.addEventListener("DOMContentLoaded", async function () {
+    const product = await getProductByID(id);
+
+    document.getElementById('titre').innerText += ` ${product.id_product}`;
+    document.getElementById('product-name').innerText = `Nom : ${product.product_name}`;
+    document.getElementById('product-description').innerText = `Description : ${product.description}`;
+    document.getElementById('product-price').innerText = `Prix : ${product.price} €`;
+    document.getElementById('product-quantity').innerText = `Quantité : ${product.quantity}`;
+
+    document.getElementById('deleteButton').addEventListener('click', async function () {
+      if (confirm("Voulez-vous vraiment supprimer ce produit ?")) {
+        await deleteProduct(id);
+        alert("Produit supprimé");
+        window.location.href = './index.html';
+      }
+    });
+  });
+</script>
+</body>
+</html>

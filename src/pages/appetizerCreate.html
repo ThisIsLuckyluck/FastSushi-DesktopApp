@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ajouter un plat</title>
+  <title>Ajouter une entrée</title>
   <link rel="stylesheet" href="./../style/global.css"/>
+  <script type="module" src="./index.js"></script>
 </head>
 
 <body>
@@ -29,20 +30,20 @@
     <button id="logout">Quitter l'application</button>
   </nav>
   <div class="container mt-5">
-    <h2 id="titre">Ajout d'un plat</h2>
+    <h2 id="titre">Ajout d'une entrée</h2>
     <form id="createProduct" typeof="Form">
       <div class="form-group">
         <label for="type_product">Type de produit :</label>
         <select id="type_product" name="type_product">
-          <option value="plate">plat</option>
+          <option value="appetizer">entrée</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="product_name">Nom du plat</label>
+        <label for="product_name">Nom de l'entrée</label>
         <input id="product_name"></input>
       </div>
       <div class="form-group">
-        <label for="description">Description du plat :</label>
+        <label for="description">Description de l'entrée :</label>
         <input type="text" id="description">
       </div>
       <div class="form-group">
@@ -72,7 +73,7 @@
 
       const response = createProduct(type_product, product_name, description, price, quantity);
 
-      alert("Plat crée")
+      alert("Produit crée")
 
     });
 
