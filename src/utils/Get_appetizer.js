@@ -33,13 +33,14 @@ function updateDessertList(appetizer) {
     appetizer.forEach((appetizer) => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td class="appetizer-link">${appetizer.id_product}</td>
-            <td>${appetizer.type_product}</td>
-            <td>${appetizer.product_name}</td>
-            <td>${appetizer.description}</td>
-            <td>${appetizer.price}</td>
-            <td>${appetizer.quantity}</td>
-        `;
+        <td class="appetizer-link">${appetizer.id_product}</td>
+        <td>${appetizer.type_product}</td>
+        <td>${appetizer.product_name}</td>
+        <td>${appetizer.description}</td>
+        <td>${appetizer.price}</td>
+        <td>${appetizer.quantity}</td>
+        <td><span class="material-symbols-outlined">delete</span></td> <!-- Utilisation de l'icône -->
+    `;
         appetizerList.appendChild(tr);
 
         const appetizerLink = tr.querySelector('.appetizer-link');
@@ -50,3 +51,4 @@ function updateDessertList(appetizer) {
         });
     });
 }
+
