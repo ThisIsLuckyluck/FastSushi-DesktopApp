@@ -33,7 +33,7 @@
       <div class="content" id="client-details">
         <h1 class="mt-4">Détails du Client</h1>
         <div id="client-details-content">
-          <form>
+          <form id="updateUserForm"> <!-- Ajout de l'ID du formulaire -->
             <div class="mb-3">
               <label for="client-id" class="form-label"><strong>Id:</strong></label>
               <input type="text" class="form-control" id="client-id" readonly>
@@ -64,11 +64,9 @@
               <label for="client-username" class="form-label"><strong>Nom d'utilisateur:</strong></label>
               <input type="text" class="form-control" id="client-username">
             </div>
-         
-          <!-----------------------------BOUTON----------------------------->
-          <form id="updateUserForm">
-            <button type="submit" class="button-24">Mise à jour</button>
-            <button type="button" class="button-25">Supprimer l'utilisateur</button>
+            <!-----------------------------BOUTON----------------------------->
+            <button type="submit" class="btn btn-update">Mise à jour</button>
+            <button type="button" class="btn btn-delete">Supprimer l'utilisateur</button>
           </form>
         </div>
       </div>

@@ -186,3 +186,36 @@ body {
   border-radius: 2px;
   border-color: #000000;
 }
+
+/*carte para*/
+.settings-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: auto; /* Centrer horizontalement */
+  margin-top: 100px; /* Espacement depuis le haut */
+}
+/* Style pour les boutons de mise à jour et de suppression */
+.btn-update,
+.btn-delete {
+    border: none;
+    border-radius: 20px; /* Bordures arrondies */
+    padding: 10px 20px; /* Espacement intérieur */
+    cursor: pointer;
+}
+
+/* Style pour le bouton de mise à jour */
+.btn-update {
+    background-color: red; /* Fond rouge */
+    color: white; /* Texte blanc */
+    margin-right: 10px; /* Marge à droite */
+}
+
+ /*Style pour le bouton de suppression*/
+.btn-delete {
+    background-color: red; /* Fond rouge */
+    color: white; /* Texte blanc */
+    margin-right: 10px;
+} 

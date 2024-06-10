@@ -4,47 +4,6 @@
     <meta charset="UTF-8" />
     <title>Paramètres | FastSushi</title>
     <link rel="stylesheet" href="./../style/global.css"/>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-right: 15px;
-        }
-        .logo-link {
-            display: flex;
-            align-items: center;
-        }
-        .logo-link img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        main {
-            padding: 20px;
-        }
-        .settings-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .settings-item {
-            margin-bottom: 15px;
-        }
-        .settings-item label {
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
     <nav>
@@ -65,24 +24,29 @@
         </ul>
         <button id="logout">Quitter l'application</button>
     </nav>
+    <style>
+        
+    </style>
     <main>
-        <h1>Paramètres de l'Application</h1>
-        <div class="settings-container">
-            <div class="settings-item">
-                <label for="app-version">Version de l'application:</label>
-                <span id="app-version">1.0.0</span>
-            </div>
-            <div class="settings-item">
-                <label for="last-update">Dernière mise à jour:</label>
-                <span id="last-update">10 Juin 2024</span>
-            </div>
-            <div class="settings-item">
-                <label for="current-time">Heure actuelle:</label>
-                <span id="current-time"></span>
-            </div>
-            <div class="settings-item">
-                <label for="user-info">Utilisateur connecté:</label>
-                <span id="user-info"></span>
+        <div class="settings-card">
+            <div class="settings-container">
+                <h1>Paramètres de l'Application</h1>
+                <div class="settings-item">
+                    <label for="app-version">Version de l'application:</label>
+                    <span id="app-version">1.0.0</span>
+                </div>
+                <div class="settings-item">
+                    <label for="last-update">Dernière mise à jour:</label>
+                    <span id="last-update">10 Juin 2024</span>
+                </div>
+                <div class="settings-item">
+                    <label for="current-time">Heure actuelle:</label>
+                    <span id="current-time"></span>
+                </div>
+                <div class="settings-item">
+                    <label for="user-info">Utilisateur connecté:</label>
+                    <span id="user-info"></span>
+                </div>
             </div>
         </div>
     </main>

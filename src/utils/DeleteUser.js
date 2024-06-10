@@ -34,12 +34,24 @@ const urlParams1 = new URLSearchParams(queryString1);
 // Récupérer la valeur de l'ID
 const id1 = urlParams1.get('id');
 
-const deleteButton = document.querySelector('.btn-danger');
+const deleteButton = document.querySelector('.btn-delete');
 
 // Ajout d'un gestionnaire d'événements au clic sur le bouton
-deleteButton.addEventListener('click', function() {
-  // Code à exécuter lorsque le bouton est cliqué
-  if (confirm("Voulez-vous vraiment supprimer cet utilisateur ?")) {
-    const response = deleteUser(id1);
-  }
+deleteButton.addEventListener('click', async function() {
+    // Code à exécuter lorsque le bouton est cliqué
+    if (confirm("Voulez-vous vraiment supprimer cet utilisateur ?")) {
+        try {
+            const response = await deleteUser(id1); // Attendre la suppression de l'utilisateur
+            if (response === "User supprimé") {
+                alert("L'utilisateur a été supprimé avec succès."); // Message de confirmation
+            } else {
+                alert("Une erreur est survenue lors de la suppression de l'utilisateur."); // Message d'erreur
+            }
+            // Rediriger vers une autre page ou effectuer d'autres actions si nécessaire
+        } catch (error) {
+            console.error('Erreur lors de la suppression de l\'utilisateur:', error);
+            // Gérer l'erreur de suppression si nécessaire
+            alert("Une erreur est survenue lors de la suppression de l'utilisateur.");
+        }
+    }
 });
