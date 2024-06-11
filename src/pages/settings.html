@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <title>Paramètres | FastSushi</title>
     <link rel="stylesheet" href="./../style/global.css"/>
+    <script type="module" src="./index.js"></script>
+    
 </head>
 <body>
     <nav>
@@ -62,7 +64,7 @@ function getUserInfo() {
 // Fonction pour initialiser les paramètres de l'application
 function initSettings() {
     document.getElementById('app-version').textContent = '1.0.0'; // Version de l'application
-    document.getElementById('last-update').textContent = '10 Juin 2024'; // Date de la dernière mise à jour
+    document.getElementById('last-update').textContent = '11 Juin 2024'; // Date de la dernière mise à jour
     document.getElementById('user-info').textContent = getUserInfo(); // Utilisateur connecté
     updateCurrentTime(); // Mettre à jour l'heure actuelle
 }
